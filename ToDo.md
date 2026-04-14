@@ -52,3 +52,10 @@
 - [x] Pass `ruff check` and `ruff format --check`
 - [x] Open GitHub issue via `gh issue create`
 - [x] Commit and push
+
+## 2026-04-14: Rewrite README.md in English
+
+- [x] Translate all sections of README.md to English
+- [x] Preserve section structure, tables, and math notation
+- [x] Open GitHub issue via `gh issue create`
+- [x] Commit and push
