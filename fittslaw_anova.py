@@ -55,6 +55,10 @@ print("--- Data Head ---")
 print(df.head())
 print()
 
+print(f"--- Record Count: {len(df)} rows ---")
+print(df.groupby(["hand_dominance", "session_code"]).size())
+print()
+
 
 # Visualizing the effect of hand dominance
 fig, axes = plt.subplots(1, 2, figsize=(15, 5))

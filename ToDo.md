@@ -31,3 +31,8 @@
 - [x] Add beginner-friendly Fitts' Law explanation
 - [x] Add two-way ANOVA / Tukey HSD / assumption-check explanation
 - [x] Document input CSV schema and output figures
+
+## 2026-04-14: Print record count (issue #5)
+
+- [x] Add `len(df)` print + groupby breakdown after data load
+- [x] Verify script reports 80 rows
