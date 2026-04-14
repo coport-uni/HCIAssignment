@@ -7,5 +7,5 @@
 - [x] Install `.claude/settings.json` and hooks (`pre-write-guard.sh`, `post-write-lint.sh`, `post-write-debug-remind.sh`)
 - [x] Install `ruff.toml` (80-column limit)
 - [x] `git init` and create `main` branch
-- [ ] Create public GitHub repo `HCIAssignment` and push
-- [ ] Open GitHub issue for this task via `gh issue create`
+- [x] Create public GitHub repo `HCIAssignment` and push
+- [x] Open GitHub issue for this task via `gh issue create` (#1)
