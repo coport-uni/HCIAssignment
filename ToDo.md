@@ -24,3 +24,10 @@
 - [x] Create conda env `anova` (python 3.11)
 - [x] Install pandas, seaborn, matplotlib, statsmodels, scipy, pingouin
 - [x] Verify `conda run -n anova python fittslaw_anova.py` executes successfully
+
+## 2026-04-14: Write README with concepts (issue #4)
+
+- [x] Draft README.md with project overview and usage
+- [x] Add beginner-friendly Fitts' Law explanation
+- [x] Add two-way ANOVA / Tukey HSD / assumption-check explanation
+- [x] Document input CSV schema and output figures
