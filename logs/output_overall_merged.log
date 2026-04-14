@@ -1,0 +1,198 @@
+--- Data Head ---
+                                 Filename  ... mean_throughput
+0     WebFitts_P0_S0_C0_Mouse_overall.csv  ...        3.759053
+1     WebFitts_P0_S0_C1_Mouse_overall.csv  ...        2.667747
+2  WebFitts_P0_S0_C2_Touchpad_overall.csv  ...        3.526557
+3  WebFitts_P0_S0_C3_Touchpad_overall.csv  ...        3.576916
+4     WebFitts_P0_S1_C0_Mouse_overall.csv  ...        4.490062
+
+[5 rows x 10 columns]
+
+--- Record Count: 80 rows ---
+Rows per participant:
+participant_code
+P0    20
+P1    20
+P2    20
+P3    20
+Name: count, dtype: int64
+
+Saved figure: figures/01_hand_dominance.png
+Saved figure: figures/02_session_code.png
+=== Two-Way ANOVA: Mean Completion Time ===
+                                         sum_sq    df          F        PR(>F)
+C(hand_dominance)                  2.232146e+06   1.0  53.561046  3.268657e-10
+C(session_code)                    2.204385e+04   4.0   0.132237  9.700637e-01
+C(hand_dominance):C(session_code)  1.048488e+05   4.0   0.628970  6.434398e-01
+Residual                           2.917236e+06  70.0        NaN           NaN
+
+--- Normality Check (Shapiro-Wilk) ---
+Statistic: 0.9708, p-value: 0.0640
+Result: Fail to reject H0. Residuals appear normal.
+
+Saved figure: figures/03_qqplot_completion_time.png
+--- Levene's Test (Hand Dominance) ---
+Statistic: 2.1760, p-value: 0.1442
+Result: Variances are equal.
+
+--- Mauchly's Test of Sphericity ---
+W: 0.0000, p-value: 0.2844
+Result: Sphericity met.
+
+=== Tukey HSD: Mean Completion Time ===
+    Multiple Comparison of Means - Tukey HSD, FWER=0.05     
+============================================================
+ group1     group2    meandiff p-adj  lower    upper  reject
+------------------------------------------------------------
+Dominant Non-Dominant 335.9828   0.0 248.0386 423.927   True
+------------------------------------------------------------
+
+  Multiple Comparison of Means - Tukey HSD, FWER=0.05  
+=======================================================
+group1 group2 meandiff p-adj    lower    upper   reject
+-------------------------------------------------------
+    S0     S1 -24.2155 0.9993 -313.9967 265.5657  False
+    S0     S2 -12.0434    1.0 -298.3312 274.2444  False
+    S0     S3 -54.5445  0.983 -337.6909 228.6019  False
+    S0     S4  14.4566 0.9999 -268.6898  297.603  False
+    S1     S2  12.1721 0.9999 -245.5295 269.8737  False
+    S1     S3  -30.329 0.9973 -284.5362 223.8782  False
+    S1     S4  38.6721  0.993 -215.5351 292.8793  False
+    S2     S3 -42.5011 0.9894 -292.7187 207.7166  False
+    S2     S4     26.5 0.9983 -223.7176 276.7177  False
+    S3     S4  69.0011  0.935 -177.6161 315.6183  False
+-------------------------------------------------------
+
+          Multiple Comparison of Means - Tukey HSD, FWER=0.05           
+========================================================================
+    group1         group2      meandiff p-adj    lower    upper   reject
+------------------------------------------------------------------------
+    DominantS0     DominantS1  -55.2594    1.0 -415.5372 305.0183  False
+    DominantS0     DominantS2 -114.9119 0.9884 -475.1897 245.3658  False
+    DominantS0     DominantS3  -37.8544    1.0 -382.3459  306.637  False
+    DominantS0     DominantS4  -81.2019 0.9992 -441.4797 279.0758  False
+    DominantS0 Non-DominantS0  274.2856 0.4542 -129.6665 678.2376  False
+    DominantS0 Non-DominantS1  256.1789 0.3875 -104.0989 616.4567  False
+    DominantS0 Non-DominantS2   314.893 0.1177  -36.7021 666.4881  False
+    DominantS0 Non-DominantS3  205.1122 0.6948 -155.1656   565.39  False
+    DominantS0 Non-DominantS4  315.3989 0.1008  -29.0926 659.8903  False
+    DominantS1     DominantS2  -59.6525 0.9999 -393.2049 273.8999  False
+    DominantS1     DominantS3    17.405    1.0 -299.0306 333.8406  False
+    DominantS1     DominantS4  -25.9425    1.0 -359.4949 307.6099  False
+    DominantS1 Non-DominantS0   329.545 0.1462  -50.7633 709.8533  False
+    DominantS1 Non-DominantS1  311.4383 0.0873  -22.1141 644.9907  False
+    DominantS1 Non-DominantS2  370.1524 0.0132   45.9977 694.3071   True
+    DominantS1 Non-DominantS3  260.3717 0.2608  -73.1807 593.9241  False
+    DominantS1 Non-DominantS4  370.6583 0.0098   54.2227 687.0939   True
+    DominantS2     DominantS3   77.0575 0.9984 -239.3781 393.4931  False
+    DominantS2     DominantS4     33.71    1.0 -299.8424 367.2624  False
+    DominantS2 Non-DominantS0  389.1975 0.0407    8.8892 769.5058   True
+    DominantS2 Non-DominantS1  371.0908 0.0176   37.5384 704.6432   True
+    DominantS2 Non-DominantS2  429.8049 0.0019  105.6502 753.9596   True
+    DominantS2 Non-DominantS3  320.0242 0.0707  -13.5282 653.5766  False
+    DominantS2 Non-DominantS4  430.3108 0.0013  113.8752 746.7464   True
+    DominantS3     DominantS4  -43.3475    1.0 -359.7831 273.0881  False
+    DominantS3 Non-DominantS0    312.14 0.1597  -53.2484 677.5284  False
+    DominantS3 Non-DominantS1  294.0333 0.0905  -22.4023 610.4689  False
+    DominantS3 Non-DominantS2  352.7474 0.0121   46.2339 659.2609   True
+    DominantS3 Non-DominantS3  242.9667 0.2819  -73.4689 559.4023  False
+    DominantS3 Non-DominantS4  353.2533 0.0086    54.915 651.5917   True
+    DominantS4 Non-DominantS0  355.4875 0.0866  -24.8208 735.7958  False
+    DominantS4 Non-DominantS1  337.3808 0.0452    3.8284 670.9332   True
+    DominantS4 Non-DominantS2  396.0949 0.0058   71.9402 720.2496   True
+    DominantS4 Non-DominantS3  286.3142  0.155  -47.2382 619.8666  False
+    DominantS4 Non-DominantS4  396.6008 0.0041   80.1652 713.0364   True
+Non-DominantS0 Non-DominantS1  -18.1067    1.0 -398.4149 362.2016  False
+Non-DominantS0 Non-DominantS2   40.6074    1.0 -331.4859 412.7007  False
+Non-DominantS0 Non-DominantS3  -69.1733 0.9999 -449.4816 311.1349  False
+Non-DominantS0 Non-DominantS4   41.1133    1.0  -324.275 406.5017  False
+Non-DominantS1 Non-DominantS2   58.7141 0.9999 -265.4406 382.8687  False
+Non-DominantS1 Non-DominantS3  -51.0667    1.0 -384.6191 282.4857  False
+Non-DominantS1 Non-DominantS4     59.22 0.9998 -257.2156 375.6556  False
+Non-DominantS2 Non-DominantS3 -109.7807 0.9824 -433.9354 214.3739  False
+Non-DominantS2 Non-DominantS4    0.5059    1.0 -306.0076 307.0194  False
+Non-DominantS3 Non-DominantS4  110.2867 0.9787 -206.1489 426.7223  False
+------------------------------------------------------------------------
+
+=== Two-Way ANOVA: Mean Click Error ===
+                                         sum_sq    df         F    PR(>F)
+C(hand_dominance)                    192.923777   1.0  1.214286  0.274259
+C(session_code)                      797.390668   4.0  1.254719  0.296081
+C(hand_dominance):C(session_code)    650.016739   4.0  1.022822  0.401649
+Residual                           11121.481481  70.0       NaN       NaN
+
+=== Tukey HSD: Mean Click Error ===
+    Multiple Comparison of Means - Tukey HSD, FWER=0.05    
+===========================================================
+ group1     group2    meandiff p-adj   lower  upper  reject
+-----------------------------------------------------------
+Dominant Non-Dominant   3.3333 0.2438 -2.3177 8.9843  False
+-----------------------------------------------------------
+
+ Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+=====================================================
+group1 group2 meandiff p-adj   lower    upper  reject
+-----------------------------------------------------
+    S0     S1   6.1364 0.7278  -7.6917 19.9644  False
+    S0     S2   10.303 0.2275  -3.3583 23.9644  False
+    S0     S3   8.8215 0.3671  -4.6899  22.333  False
+    S0     S4   8.4512 0.4113  -5.0603 21.9626  False
+    S1     S2   4.1667 0.8774  -8.1306 16.4639  False
+    S1     S3   2.6852 0.9717  -9.4453 14.8157  False
+    S1     S4   2.3148 0.9836  -9.8157 14.4453  False
+    S2     S3  -1.4815 0.9968 -13.4216 10.4587  False
+    S2     S4  -1.8519 0.9925  -13.792 10.0883  False
+    S3     S4  -0.3704    1.0 -12.1387  11.398  False
+-----------------------------------------------------
+
+         Multiple Comparison of Means - Tukey HSD, FWER=0.05         
+=====================================================================
+    group1         group2     meandiff p-adj   lower    upper  reject
+---------------------------------------------------------------------
+    DominantS0     DominantS1   1.9444    1.0 -20.3006 24.1895  False
+    DominantS0     DominantS2   5.2778 0.9987 -16.9673 27.5228  False
+    DominantS0     DominantS3   1.1111    1.0 -20.1592 22.3814  False
+    DominantS0     DominantS4   6.9444   0.99 -15.3006 29.1895  False
+    DominantS0 Non-DominantS0  -5.5556 0.9992 -30.4972 19.3861  False
+    DominantS0 Non-DominantS1   5.2778 0.9987 -16.9673 27.5228  False
+    DominantS0 Non-DominantS2     10.0 0.8856 -11.7089 31.7089  False
+    DominantS0 Non-DominantS3  12.7778  0.684  -9.4673 35.0228  False
+    DominantS0 Non-DominantS4   5.1111 0.9986 -16.1592 26.3814  False
+    DominantS1     DominantS2   3.3333 0.9999 -17.2616 23.9282  False
+    DominantS1     DominantS3  -0.8333    1.0 -20.3714 18.7047  False
+    DominantS1     DominantS4      5.0 0.9985 -15.5949 25.5949  False
+    DominantS1 Non-DominantS0     -7.5 0.9883 -30.9818 15.9818  False
+    DominantS1 Non-DominantS1   3.3333 0.9999 -17.2616 23.9282  False
+    DominantS1 Non-DominantS2   8.0556 0.9468 -11.9591 28.0702  False
+    DominantS1 Non-DominantS3  10.8333  0.781  -9.7616 31.4282  False
+    DominantS1 Non-DominantS4   3.1667 0.9999 -16.3714 22.7047  False
+    DominantS2     DominantS3  -4.1667 0.9995 -23.7047 15.3714  False
+    DominantS2     DominantS4   1.6667    1.0 -18.9282 22.2616  False
+    DominantS2 Non-DominantS0 -10.8333 0.8846 -34.3151 12.6485  False
+    DominantS2 Non-DominantS1      0.0    1.0 -20.5949 20.5949  False
+    DominantS2 Non-DominantS2   4.7222 0.9988 -15.2924 24.7369  False
+    DominantS2 Non-DominantS3      7.5 0.9716 -13.0949 28.0949  False
+    DominantS2 Non-DominantS4  -0.1667    1.0 -19.7047 19.3714  False
+    DominantS3     DominantS4   5.8333 0.9928 -13.7047 25.3714  False
+    DominantS3 Non-DominantS0  -6.6667 0.9933 -29.2272 15.8939  False
+    DominantS3 Non-DominantS1   4.1667 0.9995 -15.3714 23.7047  False
+    DominantS3 Non-DominantS2   8.8889 0.8733 -10.0365 27.8143  False
+    DominantS3 Non-DominantS3  11.6667 0.6348  -7.8714 31.2047  False
+    DominantS3 Non-DominantS4      4.0 0.9994 -14.4206 22.4206  False
+    DominantS4 Non-DominantS0    -12.5 0.7692 -35.9818 10.9818  False
+    DominantS4 Non-DominantS1  -1.6667    1.0 -22.2616 18.9282  False
+    DominantS4 Non-DominantS2   3.0556    1.0 -16.9591 23.0702  False
+    DominantS4 Non-DominantS3   5.8333 0.9951 -14.7616 26.4282  False
+    DominantS4 Non-DominantS4  -1.8333    1.0 -21.3714 17.7047  False
+Non-DominantS0 Non-DominantS1  10.8333 0.8846 -12.6485 34.3151  False
+Non-DominantS0 Non-DominantS2  15.5556 0.4583   -7.419 38.5301  False
+Non-DominantS0 Non-DominantS3  18.3333 0.2606  -5.1485 41.8151  False
+Non-DominantS0 Non-DominantS4  10.6667 0.8689 -11.8939 33.2272  False
+Non-DominantS1 Non-DominantS2   4.7222 0.9988 -15.2924 24.7369  False
+Non-DominantS1 Non-DominantS3      7.5 0.9716 -13.0949 28.0949  False
+Non-DominantS1 Non-DominantS4  -0.1667    1.0 -19.7047 19.3714  False
+Non-DominantS2 Non-DominantS3   2.7778    1.0 -17.2369 22.7924  False
+Non-DominantS2 Non-DominantS4  -4.8889 0.9975 -23.8143 14.0365  False
+Non-DominantS3 Non-DominantS4  -7.6667 0.9544 -27.2047 11.8714  False
+---------------------------------------------------------------------
+
