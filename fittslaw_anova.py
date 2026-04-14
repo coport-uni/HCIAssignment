@@ -56,7 +56,8 @@ print(df.head())
 print()
 
 print(f"--- Record Count: {len(df)} rows ---")
-print(df.groupby(["hand_dominance", "session_code"]).size())
+print("Rows per participant:")
+print(df["participant_code"].value_counts().sort_index())
 print()
 
 
