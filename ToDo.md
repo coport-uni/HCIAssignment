@@ -36,3 +36,19 @@
 
 - [x] Add `len(df)` print + groupby breakdown after data load
 - [x] Verify script reports 80 rows
+
+## 2026-04-14: Refactor fittslaw_anova.py into FittsLawAnalysis class
+
+- [x] Define `FittsLawAnalysis` class in `fittslaw_anova.py`
+- [x] Move CSV loading + column rename into `_load_data()`
+- [x] Add `print_summary()` for record counts per participant
+- [x] Add `plot_hand_dominance()` and `plot_sessions()` methods
+- [x] Add `run_anova_completion_time()` and `run_tukey_completion_time()`
+- [x] Add `run_anova_click_error()` and `run_tukey_click_error()`
+- [x] Add `_save_figure()` staticmethod helper
+- [x] Add `if __name__ == "__main__":` entry point preserving output
+- [x] Verify MIT naming (verbs for methods, nouns for variables)
+- [x] Verify 80-column limit
+- [x] Pass `ruff check` and `ruff format --check`
+- [x] Open GitHub issue via `gh issue create`
+- [x] Commit and push
