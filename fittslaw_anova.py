@@ -36,7 +36,8 @@ def save_figure(fig, filename):
 
 
 # Loading the data
-df = pd.read_csv("in_class_study_data.csv")
+filename = "/workspace/sungwoo_docker/Anova/Data/overall_merged.csv"
+df = pd.read_csv(filename)
 
 df = df.rename(
     columns={
@@ -95,7 +96,7 @@ sns.barplot(
     y="mean_completion_time",
     ci="sd",
     capsize=0.15,
-    order=["S1", "S2", "S3", "S4", "S5"],
+    order=["S0", "S1", "S2", "S3", "S4"],
     palette="Blues",
 )
 axes[0].set_xlabel("Session Code")
@@ -109,7 +110,7 @@ sns.barplot(
     y="mean_click_error",
     ci="sd",
     capsize=0.15,
-    order=["S1", "S2", "S3", "S4", "S5"],
+    order=["S0", "S1", "S2", "S3", "S4"],
     palette="Blues",
 )
 axes[1].set_xlabel("Session Code")

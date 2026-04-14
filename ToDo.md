@@ -17,3 +17,10 @@
 - [x] Replace `plt.show()` with `savefig` to `figures/`
 - [x] Pass ruff lint and format checks
 - [x] Run script end-to-end; verify ANOVA output and 3 PNG figures
+
+## 2026-04-14: Session code S0-S4 + anova conda env (issue #3)
+
+- [x] Update barplot `order` from `S1-S5` to `S0-S4` in `fittslaw_anova.py`
+- [x] Create conda env `anova` (python 3.11)
+- [x] Install pandas, seaborn, matplotlib, statsmodels, scipy, pingouin
+- [x] Verify `conda run -n anova python fittslaw_anova.py` executes successfully
