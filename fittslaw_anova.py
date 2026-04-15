@@ -38,12 +38,14 @@ class FittsLawAnalysis:
         "Session Code": "session_code",
         "Condition Code": "condition_code",
         "Hand Dominance": "hand_dominance",
+        "Pointing Device": "pointing_device",
         "Mean Completion Time (ms)": "mean_completion_time",
         "Mean Click Error (%)": "mean_click_error",
         "Mean Throughput (bps)": "mean_throughput",
     }
     hand_order = ["Dominant", "Non-Dominant"]
     session_order = ["S0", "S1", "S2", "S3", "S4"]
+    device_order = ["Mouse", "Touchpad"]
     alpha = 0.05
 
     def __init__(self, csv_path, figure_dir="figures"):
@@ -142,6 +144,37 @@ class FittsLawAnalysis:
         axes[1].set_xlabel("Session Code")
         axes[1].set_ylabel("Mean Click Error (%)")
         self._save_figure(fig, "02_session_code.png")
+
+    def plot_pointing_device(self):
+        """Save bar plots of completion time and click error by device."""
+        fig, axes = plt.subplots(1, 2, figsize=(15, 5))
+        sns.barplot(
+            ax=axes[0],
+            data=self.df,
+            x="pointing_device",
+            y="mean_completion_time",
+            ci="sd",
+            capsize=0.05,
+            order=self.device_order,
+            palette="Oranges",
+        )
+        axes[0].set_xlabel("Pointing Device")
+        axes[0].set_ylabel("Mean Completion Time (ms)")
+
+        axes[1].set_ylim(bottom=0, top=20)
+        sns.barplot(
+            ax=axes[1],
+            data=self.df,
+            x="pointing_device",
+            y="mean_click_error",
+            ci="sd",
+            capsize=0.05,
+            order=self.device_order,
+            palette="Oranges",
+        )
+        axes[1].set_xlabel("Pointing Device")
+        axes[1].set_ylabel("Mean Click Error (%)")
+        self._save_figure(fig, "04_pointing_device.png")
 
     def run_anova_completion_time(self):
         """Run two-way ANOVA on completion time and assumption checks.
@@ -255,6 +288,7 @@ class FittsLawAnalysis:
         self.print_summary()
         self.plot_hand_dominance()
         self.plot_sessions()
+        self.plot_pointing_device()
         self.run_anova_completion_time()
         self.run_tukey_completion_time()
         self.run_anova_click_error()

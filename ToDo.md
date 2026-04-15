@@ -59,3 +59,14 @@
 - [x] Preserve section structure, tables, and math notation
 - [x] Open GitHub issue via `gh issue create`
 - [x] Commit and push
+
+## 2026-04-14: Add plot_pointing_device() method
+
+- [x] Add `Pointing Device` -> `pointing_device` to column_rename_map
+- [x] Add `device_order = ["Mouse", "Touchpad"]` class constant
+- [x] Add `plot_pointing_device()` mirroring `plot_hand_dominance()`
+- [x] Save figure as `04_pointing_device.png`
+- [x] Wire into `run_all()`
+- [x] Pass `ruff check` and `ruff format --check`
+- [x] Open GitHub issue via `gh issue create`
+- [x] Commit and push
